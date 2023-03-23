@@ -27,14 +27,31 @@ date <- page |>
   html_elements (".scorebox_meta div:nth-child(1)") |>
   html_text()
 
+record <- page |>
+  html_elements(".scores+ div") |>
+  html_text()
+
 nba_game_log <- tibble(
   score = scores,
-  time_elapsed = time
+  time_rem = time
 )
 
 nba_game_log <- nba_game_log |>
   distinct(score, .keep_all = T) |>
   separate(score, into = c(left_team[1], right_team[1]), sep = "-")
+
+nba_game_log$time_rem <- ms(nba_game_log$time_rem)
+
+quart <- 3
+for (i in 1:nrow(nba_game_log)){
+  curr <- nba_game_log$time_rem[i]
+  nba_game_log$time_rem[i] <- curr + quart*ms("12:00")
+  if (curr == 0) {quart <- quart -1 }
+}
+
+nba_game_log[1, left_team[1]] <- record[1]
+
+nba_game_log[1, right_team[1]] <- record[2]
 
 date_split <- strsplit(date, ", ") |>
   sapply("[", c(2,3))
