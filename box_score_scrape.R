@@ -57,6 +57,8 @@ date_split <- strsplit(date, ", ") |>
   sapply("[", c(2,3))
 month_day <- strsplit(date_split[1], " ")
 
-write_csv(nba_game_log, paste0(paste(left_team[1], right_team[1], month_day[[1]][1], 
-                                     month_day[[1]][2], date_split[2], sep = "_"), ".csv"))
+file_name <- paste0(paste(left_team[1], right_team[1], month_day[[1]][1], 
+                          month_day[[1]][2], date_split[2], sep = "_"))
+
+write_csv(nba_game_log, paste0("data/", file_name, ".csv"))
 
