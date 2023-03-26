@@ -4,7 +4,7 @@ library(lubridate)
 
 base_url <- "https://www.basketball-reference.com"
 
-# Create a list of months in the NBA 2021 season
+# Create a list of months in the NBA season
 months <- c("december", "january", "february", "march", "april", "may", "june", "july")
 
 # Create an empty tibble to store the game data

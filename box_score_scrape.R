@@ -3,13 +3,16 @@ library(rvest)
 library(lubridate)
 library(robotstxt)
 
+# Read the CSV file containing the URLs for NBA games in a given year
 game_data <- read_csv("data/nba_games_2021/urls2021/nba_2021_game_urls.csv")
 
 # Loop over the game URLs and scrape the data for each game
 for (i in seq_len(nrow(game_data))) {
   
+  # read html of current URL
   page <- read_html (game_data$url[i])
   
+  # scrape desired data from URL
   left_team <- page |>
     html_elements(".thead .center:nth-child(2)") |>
     html_text()
@@ -34,15 +37,18 @@ for (i in seq_len(nrow(game_data))) {
     html_elements(".scores+ div") |>
     html_text()
   
+  # compile into tibble to store data
   nba_game_log <- tibble(
     score = scores,
     time_rem = time
   )
   
+  # separate scores into diff columns for each time
   nba_game_log <- nba_game_log |>
     distinct(score, .keep_all = T) |>
     separate(score, into = c(left_team[1], right_team[1]), sep = "-")
   
+  # convert time remaining in quarter to time remaining in game total
   nba_game_log$time_rem <- ms(nba_game_log$time_rem)
   quart <- 3
   for (i in 1:nrow(nba_game_log)){
@@ -56,10 +62,11 @@ for (i in seq_len(nrow(game_data))) {
     if (quart < 0) {break}
   }
   
+  # add record of each team to first row of tibble
   nba_game_log[1, left_team[1]] <- record[1]
-  
   nba_game_log[1, right_team[1]] <- record[2]
   
+  # construct filename and write csv
   date_split <- strsplit(date, ", ") |>
     sapply("[", c(2,3))
   

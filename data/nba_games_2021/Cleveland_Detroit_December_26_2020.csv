@@ -91,57 +91,57 @@ Start of 3rd quarter,NA,24M 0S
 81,81,13M 10S
 81,83,12M 27S
 81,86,12M 0S
-End of 3rd quarter,NA,0S
-Start of 4th quarter,NA,0S
-81,88,-1M 21S
-84,88,-2M 17S
-84,90,-3M 58S
-86,90,-4M 40S
-86,92,-5M 40S
-89,92,-5M 15S
-91,92,-6M 45S
-91,95,-6M 35S
-92,95,-7M 58S
-92,97,-7M 40S
-92,98,-7M 40S
-93,98,-8M 23S
-93,101,-8M 5S
-94,101,-9M 31S
-96,101,-10M 56S
-97,101,-10M 27S
-98,101,-11M 52S
-99,101,-11M 52S
-100,101,-11M 8S
-101,101,-11M 8S
-End of 4th quarter,NA,-12M 0S
-Start of 1st overtime,NA,-19M 0S
-Jump ball: A. Drummond vs. M. Plumlee (D. Rose gains possession),NA,-19M 0S
-101,102,-20M 45S
-101,104,-20M 11S
-101,106,-21M 52S
-101,109,-21M 17S
-103,109,-22M 45S
-103,112,-22M 15S
-105,112,-23M 58S
-108,112,-23M 34S
-110,112,-24M 54S
-Jump ball: D. Rose vs. I. Okoro (S. Doumbouya gains possession),NA,-24M 30S
-112,112,-24M 7S
-End of 1st overtime,NA,-24M 0S
-Start of 2nd overtime,NA,-31M 0S
-Jump ball: A. Drummond vs. J. Grant (K. Love gains possession),NA,-31M 0S
-114,112,-32M 1S
-116,112,-33M 41S
-119,112,-33M 5S
-120,112,-34M 30S
-121,112,-34M 30S
-122,112,-34M 30S
-122,114,-34M 15S
-124,114,-35M 53S
-124,115,-35M 48S
-124,117,-35M 10S
-127,117,-36M 57S
-127,118,-36M 47S
-127,119,-36M 47S
-128,119,-36M 36S
-End of 2nd overtime,NA,-36M 0S
+End of 3rd quarter,NA,12M 0S
+Start of 4th quarter,NA,12M 0S
+81,88,11M 21S
+84,88,10M 17S
+84,90,9M 58S
+86,90,8M 40S
+86,92,7M 40S
+89,92,7M 15S
+91,92,6M 45S
+91,95,6M 35S
+92,95,5M 58S
+92,97,5M 40S
+92,98,5M 40S
+93,98,4M 23S
+93,101,4M 5S
+94,101,3M 31S
+96,101,2M 56S
+97,101,2M 27S
+98,101,1M 52S
+99,101,1M 52S
+100,101,1M 8S
+101,101,1M 8S
+End of 4th quarter,NA,0S
+Start of 1st overtime,NA,5M 0S
+Jump ball: A. Drummond vs. M. Plumlee (D. Rose gains possession),NA,5M 0S
+101,102,4M 45S
+101,104,4M 11S
+101,106,3M 52S
+101,109,3M 17S
+103,109,2M 45S
+103,112,2M 15S
+105,112,1M 58S
+108,112,1M 34S
+110,112,54S
+Jump ball: D. Rose vs. I. Okoro (S. Doumbouya gains possession),NA,30S
+112,112,7S
+End of 1st overtime,NA,0S
+Start of 2nd overtime,NA,5M 0S
+Jump ball: A. Drummond vs. J. Grant (K. Love gains possession),NA,5M 0S
+114,112,4M 1S
+116,112,3M 41S
+119,112,3M 5S
+120,112,2M 30S
+121,112,2M 30S
+122,112,2M 30S
+122,114,2M 15S
+124,114,1M 53S
+124,115,1M 48S
+124,117,1M 10S
+127,117,57S
+127,118,47S
+127,119,47S
+128,119,36S
+End of 2nd overtime,NA,0S
