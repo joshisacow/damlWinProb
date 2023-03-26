@@ -20,7 +20,7 @@ for (month in months) {
   games <- page %>% html_elements(".center a") %>% html_attr("href")
   
   # Extract the game IDs from the game URLs and generate the URLs for the pbp pages
-  game_ids <- games %>% str_extract("\\d{8}") %>% unique()
+  game_ids <- games %>% str_extract("\\d{9}[A-Z]{3}") %>% unique()
   pbp_urls <- paste0(base_url, "/boxscores/pbp/", game_ids, ".html")
   
   # Add the game data to the tibble
