@@ -7,6 +7,7 @@ game_data <- read_csv("data/nba_games_2021/urls2021/nba_2021_game_urls.csv")
 
 # Loop over the game URLs and scrape the data for each game
 for (i in seq_len(nrow(game_data))) {
+  
   page <- read_html (game_data$url[i])
   
   left_team <- page |>
@@ -43,12 +44,16 @@ for (i in seq_len(nrow(game_data))) {
     separate(score, into = c(left_team[1], right_team[1]), sep = "-")
   
   nba_game_log$time_rem <- ms(nba_game_log$time_rem)
-  
   quart <- 3
   for (i in 1:nrow(nba_game_log)){
     curr <- nba_game_log$time_rem[i]
     nba_game_log$time_rem[i] <- curr + quart*ms("12:00")
-    if (curr == 0) {quart <- quart -1 }
+    if (curr == 0) {
+      if (grepl("End of", nba_game_log[[1]][i], fixed = T)) {
+        quart <- quart -1 
+      }
+    }
+    if (quart < 0) {break}
   }
   
   nba_game_log[1, left_team[1]] <- record[1]
@@ -65,4 +70,5 @@ for (i in seq_len(nrow(game_data))) {
   
   write_csv(nba_game_log, paste0("data/nba_games_2021/", file_name, ".csv"))
   
+  Sys.sleep(3)
 }
