@@ -28,4 +28,4 @@ for (month in months) {
 }
 
 # Save the game data to a CSV file
-write_csv(game_data, "nba_2021_game_urls.csv")
+write_csv(game_data, paste0("data/nba_games_2021/urls2021/", "nba_2021_game_urls.csv"))
